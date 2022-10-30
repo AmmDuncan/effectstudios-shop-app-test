@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn', { full: full, outline: outline }]">
+  <button :class="['btn', { full, outline, lg, left }]">
     <span class="btn__text"><slot></slot></span>
     <span class="btn__icon"><slot name="icon"></slot></span>
   </button>
@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "ButtonComponent",
-  props: ["full", "outline"],
+  props: ["full", "outline", "lg", "left"],
 };
 </script>
 
@@ -44,9 +44,29 @@ export default {
     color: white;
   }
 
+  &.left {
+    .btn__text {
+      justify-content: flex-start;
+    }
+  }
+
   &.full {
     width: 100%;
     grid: 4rem / auto 4rem;
+  }
+
+  &.lg {
+    grid-template-rows: 5.6rem;
+    grid-template-columns: max-content 5.6rem;
+    font-size: 1.6rem;
+
+    .btn__text {
+      padding-inline: 2.4rem;
+    }
+  }
+
+  &.lg.full {
+    grid: 5.6rem / auto 5.6rem;
   }
 
   &.outline {

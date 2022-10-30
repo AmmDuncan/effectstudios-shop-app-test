@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            <ButtonComponent :full="true">
+            <ButtonComponent :full="true" :lg="true" :left="true">
               <template v-slot:default>Add to Cart</template>
               <template v-slot:icon><CartIconSmall /></template>
             </ButtonComponent>
