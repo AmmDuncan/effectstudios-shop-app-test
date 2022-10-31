@@ -79,7 +79,7 @@ const active = ref(0);
     //grid: var(--small-image-size) / auto-flow 1fr;
     //gap: var(--gap);
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
 
     > * + * {
